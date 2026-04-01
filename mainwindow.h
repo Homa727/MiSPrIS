@@ -20,6 +20,40 @@ public:
 private slots:
     void on_lineEdit_cursorPositionChanged(int arg1, int arg2);
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_radioButton_clicked();
+
+    void on_radioButton_2_clicked();
+
+    void on_radioButton_3_clicked();
+
+    void on_radioButton_4_clicked();
+
+    void on_radioButton_5_clicked();
+
+    void on_radioButton_6_clicked();
+
+    void on_radioButton_7_clicked();
+
+    void on_radioButton_8_clicked();
+
+    void on_radioButton_9_clicked();
+
+    void on_radioButton_10_clicked();
+
+    void on_lineEdit_2_cursorPositionChanged(int arg1, int arg2);
+
+    void on_lineEdit_3_cursorPositionChanged(int arg1, int arg2);
+
+    void on_lineEdit_4_cursorPositionChanged(int arg1, int arg2);
+
+    void on_lineEdit_5_cursorPositionChanged(int arg1, int arg2);
+
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     Database *database;

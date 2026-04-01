@@ -1,7 +1,6 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 #include <QObject>
-#include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QVector>
@@ -39,18 +38,19 @@ public:
     explicit Database(QObject *parent = nullptr);
     ~Database();
 
-    bool connectToDatabase();
-    bool initializeDatabase();
-
-    bool addUnit( const QString &name, const QString &shortmane);
+    void connectToDatabase();
+    void disconnectDatabase();
+    void addUnit( const QString &name, const QString &shortmane);
+    void deleteUnit(int id);
+    bool setBaseUnit(int classID, int unitID);
     QVector<Unit> getAllUnits();
 
     bool AddProductClass(const ProductClass &cls);
-    bool deleteProductClass(int id);
+    bool deleteProductClass(int id_for_del);
     bool moveProductClass(int classID, int newParentID);
 
     QVector<ProductClass> getAllProductClasses();
-    QVector<ProductClass> getChild(int parentID);
+    QVector<ProductClass> getAllChild(int parentID);
     QVector<ProductClass> getAllDEscendants(int parentID);
     QVector<ProductClass> getAllParents(int classID);
     QVector<ProductClass> getTerminalClasses(int parentID);
@@ -58,18 +58,13 @@ public:
     bool classCodeExists(const QString &code);
     bool checkCycle( int classID, int newParentID);
 
-    bool addProduct(const Product &product);
-    bool deleteProduct( int id);
 
-    QVector<Product> getAllProduct();
-    QVector<Product> getProductsByClass(int classID);
 
-    int getProductCount();
-    int getClassCount();
-    int getUnitsCount();
+    //QVector<Product> getAllProduct();
+    //QVector<Product> getProductsByClass(int classID);
+    bool changeOrder(int classID,int newOrderIndex);
 private:
-    QSqlDatabase db;
-    QString dbPath;
+    QSqlDatabase database;
 
     ProductClass mapProductsClass(QSqlQuery &query);
     Product  mapProducts(QSqlQuery &query);
