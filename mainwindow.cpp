@@ -62,11 +62,11 @@ void MainWindow::on_radioButton_clicked()
 {
 
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("Код класса:");
+    ui->lineEdit_3->setPlaceholderText("Код класса:");
     ui->lineEdit_3->setVisible(true);
-    ui->lineEdit_4->setText("Наименование:");
+    ui->lineEdit_4->setPlaceholderText("Наименование:");
     ui->lineEdit_4->setVisible(true);
-    ui->lineEdit_5->setText("Терминальный (1/0):");
+    ui->lineEdit_5->setPlaceholderText("Терминальный (1/0):");
     ui->spinBox->setVisible(true);
     ui->spinBox->setPrefix("Родитель ID: ");
     ui->spinBox_2->setVisible(true);
@@ -144,7 +144,7 @@ void MainWindow::on_radioButton_5_clicked()
 void MainWindow::on_radioButton_6_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("Код класса:");
+    ui->lineEdit_3->setPlaceholderText("Код класса:");
     ui->lineEdit_3->setVisible(true);
     ui->lineEdit_4->setVisible(false);
     ui->spinBox->setVisible(false);
