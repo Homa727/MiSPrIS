@@ -297,7 +297,7 @@ void MainWindow::on_pushButton_4_clicked()
         }
     }
     if(ui->radioButton_6->isChecked()){
-        const QString code=ui->lineEdit_3->text();
+        const QString code=ui->lineEdit_3->text().trimmed();
         if(database->classCodeExists(const QString &code)){
             ui->lineEdit_5->setText("Код уникален");
         }else{
