@@ -41,7 +41,7 @@ void Database::disconnectDatabase() {
 
 bool Database::AddProductClass(const ProductClass &cls){
     QSqlQuery query;
-    query.prepare("INSERT INTO ProductClass(code, imay, isTerminal, baseUnitID, parentID, orderIndex)" "VALUES(:code, :name, :isTerminal, baseUnitID, parentID, orderIndex)");
+    query.prepare("INSERT INTO ProductClass(code, imay, isTerminal, baseUnitID, parentID, orderIndex)" "VALUES(:code, :name, :isTerminal, :baseUnitID, :parentID, :orderIndex)");
     query.bindValue(":code", cls.code);
     query.bindValue(":name", cls.name);
     query.bindValue(":isTerminal",cls.isTerminal);
@@ -60,7 +60,7 @@ void Database::addUnit(const QString &name, const QString &shortmane){
 }
 bool Database::deleteProductClass(int id_for_del){
     QSqlQuery query;
-    query.prepare("DELETE FROM ProductClass" "WHERE id=:id");
+    query.prepare("DELETE FROM ProductClass WHERE id=:id");
     query.bindValue(":id", id_for_del);
     return query.exec();
 }
@@ -73,7 +73,7 @@ void Database::deleteUnit(int id){
 }
 bool Database::moveProductClass(int classID, int newParentID){
     QSqlQuery query;
-    query.prepare("UPDATE ProductClass" "SET parentID = :newParentID" "WHERE id=:classID");
+    query.prepare("UPDATE ProductClass SET parentID = :newParentID WHERE id=:classID");
     query.bindValue(":classID", classID);
     query.bindValue(":newParentID", newParentID);
     return query.exec();
