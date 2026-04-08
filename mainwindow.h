@@ -54,6 +54,8 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_spinBox_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     Database *database;
