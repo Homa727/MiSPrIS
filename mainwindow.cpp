@@ -62,10 +62,10 @@ void MainWindow::on_radioButton_clicked()
 {
 
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setPlaceholderText("Код класса:");
     ui->lineEdit_3->setVisible(true);
-    ui->lineEdit_4->setPlaceholderText("Наименование:");
+    ui->lineEdit_3->setPlaceholderText("Введите код:");
     ui->lineEdit_4->setVisible(true);
+    ui->lineEdit_4->setPlaceholderText("Введите имя:");
     ui->lineEdit_5->setPlaceholderText("Терминальный (1/0):");
     ui->spinBox->setVisible(true);
     ui->spinBox->setPrefix("Родитель ID: ");
@@ -79,9 +79,9 @@ void MainWindow::on_radioButton_clicked()
 void MainWindow::on_radioButton_2_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
-    ui->lineEdit_4->setText("Новый родитель ID");
+    ui->lineEdit_4->setPlaceholderText("Новый родитель ID");
     ui->lineEdit_4->setVisible(true);
     ui->spinBox->setVisible(true);
     ui->spinBox_2->setVisible(true);
@@ -89,15 +89,16 @@ void MainWindow::on_radioButton_2_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
 void MainWindow::on_radioButton_3_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
-    ui->lineEdit_4->setText("Новый порядковый индекс");
+    ui->lineEdit_4->setPlaceholderText("Новый порядковый индекс");
     ui->lineEdit_4->setVisible(true);
     ui->spinBox->setVisible(true);
     ui->spinBox_2->setVisible(true);
@@ -105,6 +106,7 @@ void MainWindow::on_radioButton_3_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
@@ -112,9 +114,9 @@ void MainWindow::on_radioButton_3_clicked()
 void MainWindow::on_radioButton_4_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
-    ui->lineEdit_4->setText("ID единицы измерения");
+    ui->lineEdit_4->setPlaceholderText("ID единицы измерения");
     ui->lineEdit_4->setVisible(true);
     ui->spinBox->setVisible(true);
     ui->spinBox_2->setVisible(true);
@@ -122,15 +124,16 @@ void MainWindow::on_radioButton_4_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
 void MainWindow::on_radioButton_5_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
-    ui->lineEdit_4->setText("ID нового родителя");
+    ui->lineEdit_4->setPlaceholderText("ID нового родителя");
     ui->lineEdit_4->setVisible(true);
     ui->spinBox->setVisible(true);
     ui->spinBox_2->setVisible(true);
@@ -138,6 +141,7 @@ void MainWindow::on_radioButton_5_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
@@ -153,13 +157,14 @@ void MainWindow::on_radioButton_6_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
 void MainWindow::on_radioButton_7_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
     ui->lineEdit_4->setVisible(false);
     ui->spinBox->setVisible(true);
@@ -168,13 +173,14 @@ void MainWindow::on_radioButton_7_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
 void MainWindow::on_radioButton_8_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
     ui->lineEdit_4->setVisible(false);
     ui->spinBox->setVisible(true);
@@ -183,13 +189,14 @@ void MainWindow::on_radioButton_8_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
 void MainWindow::on_radioButton_9_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
     ui->lineEdit_4->setVisible(false);
     ui->spinBox->setVisible(true);
@@ -198,13 +205,14 @@ void MainWindow::on_radioButton_9_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 
 void MainWindow::on_radioButton_10_clicked()
 {
     ui->lineEdit_2->setVisible(true);
-    ui->lineEdit_3->setText("ID класса");
+    ui->lineEdit_3->setPlaceholderText("ID класса");
     ui->lineEdit_3->setVisible(true);
     ui->lineEdit_4->setVisible(false);
     ui->spinBox->setVisible(true);
@@ -213,6 +221,7 @@ void MainWindow::on_radioButton_10_clicked()
     ui->lineEdit_5->setVisible(true);
     ui->spinBox->setPrefix("");
     ui->spinBox_2->setPrefix("");
+    ui->lineEdit_5->setPlaceholderText(" ");
 }
 
 void MainWindow::on_lineEdit_2_cursorPositionChanged(int arg1, int arg2)
@@ -233,7 +242,7 @@ void MainWindow::on_lineEdit_4_cursorPositionChanged(int arg1, int arg2)
 }
 
 void MainWindow::on_lineEdit_5_cursorPositionChanged(int arg1, int arg2){
-    ui->lineEdit_5->setReadOnly(true);
+    //ui->lineEdit_5->setReadOnly(true);
 }
 
 void MainWindow::on_pushButton_4_clicked()
@@ -297,11 +306,11 @@ void MainWindow::on_pushButton_4_clicked()
         }
     }
     if(ui->radioButton_6->isChecked()){
-        const QString code=ui->lineEdit_3->text().trimmed();
-        if(database->classCodeExists(const QString &code)){
-            ui->lineEdit_5->setText("Код уникален");
+        const QString code=ui->lineEdit_3->text();
+        if(database->classCodeExists(code)){
+            ui->lineEdit_5->setText("Код занят");
         }else{
-            ui->lineEdit_5->setText("Код не уникален");
+            ui->lineEdit_5->setText("Код свободен");
         }
     }
     if(ui->radioButton_7->isChecked()){
@@ -351,5 +360,11 @@ void MainWindow::on_pushButton_4_clicked()
             ui->lineEdit_5->setText("Ошибка удаления");
         }
     }
+}
+
+
+void MainWindow::on_spinBox_valueChanged(int arg1)
+{
+    ui->spinBox->setMaximum(10000);
 }
 
