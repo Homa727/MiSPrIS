@@ -24,6 +24,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->radioButton_8->setAutoExclusive(true);
     ui->radioButton_9->setAutoExclusive(true);
     ui->radioButton_10->setAutoExclusive(true);
+    ui->lineEdit_6->setVisible(false);
+    ui->lineEdit_7->setVisible(false);
+    ui->lineEdit_8->setVisible(false);
+    ui->lineEdit_9->setVisible(false);
+    ui->spinBox_3->setVisible(false);
+    ui->spinBox_4->setVisible(false);
+    
 }
 
 MainWindow::~MainWindow()
@@ -224,6 +231,103 @@ void MainWindow::on_radioButton_10_clicked()
     ui->lineEdit_5->setPlaceholderText(" ");
 }
 
+void MainWindow::on_radioButton_11_clicked()
+{
+    ui->lineEdit_6->setVisible(true);
+    ui->lineEdit_6->setText("Введите имя перечисления, которое хотите добавить");
+    ui->lineEdit_7->setVisible(true);
+    ui->spinBox_3->setVisible(false);
+    ui->spinBox_4->setVisible(false);
+    ui->lineEdit_9->setVisible(true);
+    ui->spinBox_3->setPrefix("");
+    ui->spinBox_4->setPrefix("");
+}
+
+
+void MainWindow::on_radioButton_12_clicked()
+{
+    ui->lineEdit_6->setVisible(true);
+    ui->lineEdit_7->setVisible(true);
+    ui->spinBox_3->setVisible(true);
+    ui->lineEdit_8->setVisible(true);
+    ui->spinBox_4->setVisible(true);
+    ui->lineEdit_9->setVisible(true);
+    ui->lineEdit_6->setText("Введите данные значения");
+    ui->lineEdit_7->setText("Введите enumID");
+    ui->lineEdit_8->setText("Введите orderID");
+    ui->spinBox_3->setPrefix("");
+    ui->spinBox_4->setPrefix("");
+}
+void MainWindow::on_radioButton_13_clicked()
+{
+    ui->lineEdit_6->setVisible(true);
+    ui->lineEdit_7->setVisible(true);
+    ui->lineEdit_8->setVisible(true);
+    ui->lineEdit_6->setText("Введите id значения которого хотите поменять номер");
+    ui->lineEdit_7->setText("Введите имя");
+    ui->spinBox_3->setPrefix("Введите id");
+    ui->spinBox_4->setPrefix("Введите новый порядковый номер");
+    ui->spinBox_3->setVisible(true);
+    ui->spinBox_4->setVisible(true);
+    ui->lineEdit_9->setVisible(true);
+}
+
+
+void MainWindow::on_radioButton_14_clicked()
+{
+    ui->lineEdit_6->setVisible(false);
+    ui->lineEdit_7->setVisible(false);
+    ui->lineEdit_8->setVisible(false);
+    ui->spinBox_3->setVisible(false);
+    ui->spinBox_4->setVisible(false);
+    ui->lineEdit_9->setVisible(true);
+    ui->spinBox->setPrefix("");
+    ui->spinBox_2->setPrefix("");
+}
+
+
+void MainWindow::on_radioButton_15_clicked()
+{
+    ui->lineEdit_6->setVisible(false);
+    ui->lineEdit_7->setVisible(false);
+    ui->lineEdit_8->setVisible(false);
+    ui->spinBox_3->setVisible(false);
+    ui->spinBox_4->setVisible(false);
+    ui->lineEdit_9->setVisible(true);
+    ui->spinBox_3->setPrefix("");
+    ui->spinBox_4->setPrefix("");
+}
+
+
+void MainWindow::on_radioButton_16_clicked()
+{
+    ui->lineEdit_6->setVisible(true);
+    ui->lineEdit_7->setVisible(true);
+    ui->lineEdit_8->setVisible(false);
+    ui->spinBox_3->setVisible(true);
+    ui->spinBox_4->setVisible(false);
+    ui->lineEdit_6->setText("Введите id для выбора значения");
+    ui->lineEdit_7->setText("Введите id");
+    ui->lineEdit_9->setVisible(true);
+    ui->spinBox_3->setPrefix("");
+    ui->spinBox_4->setPrefix("");
+}
+
+void MainWindow::on_radioButton_17_clicked()
+{
+    ui->lineEdit_6->setVisible(true);
+    ui->lineEdit_7->setVisible(true);
+    ui->lineEdit_8->setVisible(true);
+    ui->spinBox_3->setVisible(true);
+    ui->spinBox_4->setVisible(false);
+    ui->lineEdit_6->setText("Введите id для выбора значения, которму поменять имя");
+    ui->lineEdit_7->setText("Введите id");
+    ui->lineEdit_9->setVisible(true);
+    ui->spinBox_3->setPrefix("");
+    ui->spinBox_4->setPrefix("");
+}
+
+
 void MainWindow::on_lineEdit_2_cursorPositionChanged(int arg1, int arg2)
 {
     ui->lineEdit_2->setReadOnly(true);
@@ -279,7 +383,7 @@ void MainWindow::on_pushButton_4_clicked()
     }
     if(ui->radioButton_3->isChecked()){
         int classID = ui->spinBox->value();
-        int newOrder = ui->spinBox->value();
+        int newOrder = ui->spinBox_2->value();
         if (database->changeOrder(classID, newOrder)) {
             ui->lineEdit_5->setText("Порядок изменён");
         } else {
@@ -288,7 +392,7 @@ void MainWindow::on_pushButton_4_clicked()
     }
     if(ui->radioButton_4->isChecked()){
         int classID = ui->spinBox->value();
-        int unitID = ui->spinBox->value();
+        int unitID = ui->spinBox_2->value();
         if (database->setBaseUnit(classID, unitID)) {
             ui->lineEdit_5->setText("Базовая единица установлена");
         } else {
@@ -297,7 +401,7 @@ void MainWindow::on_pushButton_4_clicked()
     }
     if(ui->radioButton_5->isChecked()){
         int classID = ui->spinBox->value();
-        int parentID = ui->spinBox->value();
+        int parentID = ui->spinBox_2->value();
         bool cycle=database->checkCycle(classID, parentID);
         if(cycle){
             ui->lineEdit_5->setText("Цикл найден");
@@ -306,7 +410,7 @@ void MainWindow::on_pushButton_4_clicked()
         }
     }
     if(ui->radioButton_6->isChecked()){
-        const QString code=ui->lineEdit_3->text();
+        const QString code=ui->lineEdit_3->text().trimmed();
         if(database->classCodeExists(code)){
             ui->lineEdit_5->setText("Код занят");
         }else{
@@ -360,6 +464,83 @@ void MainWindow::on_pushButton_4_clicked()
             ui->lineEdit_5->setText("Ошибка удаления");
         }
     }
+    if(ui->radioButton_11->isChecked()){
+        QString imya=ui->lineEdit_7->text().trimmed();
+        if(database->addEnum(imya)){
+            ui->lineEdit_9->setText("Перечисление добавлено");
+        }else{
+            ui->lineEdit_9->setText("Перечисление не добавлено");
+        }
+    }
+    if(ui->radioButton_12->isChecked()){
+        QString code = ui->lineEdit_7->text().trimmed();
+        int enumid = ui->spinBox_3->value();
+        int orderIndex = ui->spinBox_4->value();
+        EnumValues val;
+        val.enumid = enumid;
+        val.code = code;
+        val.orderIndex = orderIndex;
+        if (database->addEnumValue(val)) {
+            ui->lineEdit_9->setText("Значение добавлено");
+        } else {
+            ui->lineEdit_9->setText("Ошибка добавления значения");
+        }
+    }
+    if(ui->radioButton_13->isChecked()){
+        int id=ui->spinBox_3->value();
+        int newOrderindex=ui->spinBox_4->value();
+        if(database->changeEnumValueOrder(id,newOrderindex)){
+            ui->lineEdit_9->setText("Номер изменен");
+        }else{
+            ui->lineEdit_9->setText("имя не изменено");
+        }
+    }
+    if(ui->radioButton_14->isChecked()){
+        QVector<EnumValues> check=database->getEnumValues();
+        if(check.empty()){
+            ui->lineEdit_9->setText("Значений нет");
+        }else{
+            QString result;
+            for(const EnumValues &v:check){
+                result += QString("%1 (%2) (%3) (%4)\n").arg(v.id).arg(v.enumid).arg(v.code).arg(v.orderIndex);
+            }
+            ui->lineEdit_9->setText(result);
+        }
+    }
+    if(ui->radioButton_15->isChecked()){
+        QVector<Enum> check=database->getEnums();
+        if(check.empty()){
+            ui->lineEdit_9->setText("Перечислений нет");
+        }else{
+            QString result;
+            for(const Enum &e:check){
+                result += QString("%1 (%2)\n").arg(e.id).arg(e.name);
+            }
+            ui->lineEdit_9->setText(result);
+        }
+    }
+    if(ui->radioButton_16->isChecked()){
+        int id= ui->spinBox_3->value();
+        QVector<EnumValues> check=database->getEnumValueByID(id);
+        if(check.empty()){
+            ui->lineEdit_9->setText("Введен неправильный id");
+        }else{
+            QString result;
+            for(const EnumValues &val:check){
+                result += QString("%1 (%2) (%3) (%4)\n").arg(val.id).arg(val.enumid).arg(val.code).arg(val.orderIndex);
+            }
+            ui->lineEdit_9->setText(result);
+        }
+    }
+    if(ui->radioButton_17->isChecked()){
+        int id=ui->spinBox_3->value();
+        QString newcode=ui->lineEdit_8->text().trimmed();
+        if(database->updateEnumValue(id,newcode)){
+            ui->lineEdit_9->setText("имя изменено");
+        }else{
+            ui->lineEdit_9->setText("имя не изменено");
+        }
+    }
 }
 
 
@@ -367,4 +548,11 @@ void MainWindow::on_spinBox_valueChanged(int arg1)
 {
     ui->spinBox->setMaximum(10000);
 }
+
+
+
+
+
+
+
 

@@ -29,6 +29,17 @@ struct Product{
     QString manufacturer;
     int productclassID;
 };
+struct Enum{
+    int id;
+    QString name;
+};
+struct EnumValues{
+    int id;
+    int enumid;
+    QString code;
+    int orderIndex;
+};
+
 
 class Database : public QObject
 {
@@ -57,7 +68,14 @@ public:
 
     bool classCodeExists(const QString &code);
     bool checkCycle( int classID, int newParentID);
-
+    bool addEnum(const QString &name);
+    bool addEnumValue(const EnumValues &ptr);
+    bool updateEnumValue(int id, QString newcode);
+    void deleteEnumValue(int id);
+    bool changeEnumValueOrder(int id,int newOrderIndex);
+    QVector<EnumValues> getEnumValues(int enumID);
+    QVector<Enum> getEnums();
+    QVector<EnumValues> getEnumValueByID(int id);
 
 
     //QVector<Product> getAllProduct();

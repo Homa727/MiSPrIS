@@ -44,6 +44,18 @@ private slots:
 
     void on_radioButton_10_clicked();
 
+    void on_radioButton_11_clicked();
+
+    void on_radioButton_12_clicked();
+
+    void on_radioButton_13_clicked();
+
+    void on_radioButton_14_clicked();
+
+    void on_radioButton_15_clicked();
+
+    void on_radioButton_16_clicked();
+
     void on_lineEdit_2_cursorPositionChanged(int arg1, int arg2);
 
     void on_lineEdit_3_cursorPositionChanged(int arg1, int arg2);
@@ -55,6 +67,9 @@ private slots:
     void on_pushButton_4_clicked();
 
     void on_spinBox_valueChanged(int arg1);
+
+
+    void on_radioButton_17_clicked();
 
 private:
     Ui::MainWindow *ui;
